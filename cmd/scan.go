@@ -25,7 +25,7 @@ var scanCmd = &cobra.Command{
 		if len(args) <= 0 {
 			fmt.Println("please provide router ip to scan.")
 		} else {
-			hosts, err := Cdirgetter("192.168.0.1/24")
+			hosts, err := Cdirgetter(args[0])
 			if err != nil {
 				print("Please Input a valid CIDR in this format ")
 				os.Exit(0)
