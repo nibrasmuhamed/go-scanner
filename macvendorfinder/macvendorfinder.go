@@ -23,5 +23,6 @@ func MacVendorFinder(mac []string) []string {
 func Macfind(mac string) string {
 	resp, _ := http.Get("https://api.macvendors.com/" + url.QueryEscape(mac))
 	b, _ := io.ReadAll(resp.Body)
+	// time.Sleep(time.Second)
 	return string(b)
 }

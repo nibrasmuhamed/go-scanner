@@ -38,6 +38,7 @@ var scanCmd = &cobra.Command{
 					printer(mac, host, MAXPORT+1, "")
 					hosts_online := append(hosts_online, host)
 					fmt.Println(hosts_online)
+					// time.Sleep(time.Second)
 					fmt.Println(macvendorfinder.Macfind(mac))
 				}
 			}
