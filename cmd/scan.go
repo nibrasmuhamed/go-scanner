@@ -13,6 +13,7 @@ import (
 	"time"
 
 	"github.com/j-keck/arping"
+	"github.com/nibrasmuhamed/go-scanner/macvendorfinder"
 	"github.com/spf13/cobra"
 )
 
@@ -37,6 +38,7 @@ var scanCmd = &cobra.Command{
 					printer(mac, host, MAXPORT+1, "")
 					hosts_online := append(hosts_online, host)
 					fmt.Println(hosts_online)
+					fmt.Println(macvendorfinder.Macfind(mac))
 				}
 			}
 			fmt.Println(cmd.Aliases)
@@ -134,7 +136,7 @@ func printer(mac string, host string, port int, service string) {
 			print(host + "\n")
 			fmt.Print("|HOST SCANNED|\t|STATE|\t|Mac Addresses|\n")
 		} else {
-			print(fmt.Sprintf("%s\t\u001b[32;1mOnline\u001b[0m\t"+mac+"\n", host))
+			print(fmt.Sprintf("%s\t\u001b[32;1mOnline\u001b[0m\t"+mac+"\t", host))
 		}
 	}
 }
