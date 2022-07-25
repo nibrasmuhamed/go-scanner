@@ -38,8 +38,8 @@ var scanCmd = &cobra.Command{
 					printer(mac, host, MAXPORT+1, "")
 					hosts_online := append(hosts_online, host)
 					fmt.Println(hosts_online)
-					// time.Sleep(time.Second)
-					fmt.Println(macvendorfinder.Macfind(mac))
+					time.Sleep(time.Second / 2)
+					fmt.Println("\u001b[47m\u001b[33;1m", macvendorfinder.Macfind(mac), "\u001b[0m")
 				}
 			}
 			fmt.Println(cmd.Aliases)
