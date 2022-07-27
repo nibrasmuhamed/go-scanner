@@ -14,6 +14,13 @@ There are so many tools out to achieve same goal. we used golang to make scannin
 2. run `sudo docker pull nibrasmuhamed/go-scanner:1.1`
 3. `docker run nibrasmuhamed/go-scanner:1.1 <args here>` // you may need to run as super user
 
+### Build docker image with source code.
+
+1. clone this repository
+2. run `docker build -t <tag:version>`
+3. `docker run <tag:version>`
+    replace tag and version accordingly. 
+
 ### Use with source code.
 
 1. clone this repository

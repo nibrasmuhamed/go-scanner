@@ -5,7 +5,7 @@
 *.so
 *.dylib
 build
-go-scanner.png
+assets
 # Test binary, built with `go test -c`
 *.test
 
