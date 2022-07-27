@@ -1,4 +1,9 @@
-FROM golang:alpine3.15 as builder
+FROM golang:alpine3.15
+
+# RUN addgroup -g 999 appuser && \
+#     adduser -r -u 999 -g appuser appuser
+# USER appuser
+ENV GOPATH=/usr/go
 
 LABEL maintainer="Go-scanner <https://github.com/nibrasmuhamed/go-scanner>"
 
@@ -8,8 +13,8 @@ COPY . .
 
 RUN go get
 
-RUN go build 
+RUN go install
 
 # USER go-scanner
 
-ENTRYPOINT [ "./go-scanner" ]
+ENTRYPOINT [ "/usr/go/bin/go-scanner" ]
